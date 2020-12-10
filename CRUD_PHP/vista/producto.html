@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUD PHP - productos</title>
+
+    <!--ESTILOS CSS BOOTSTRAP-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <!--ESTILOS CSS ICONOS FONTAWESOME-->
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <!--ESTILOS Sweet Alert-->
+    <link rel="stylesheet" href="../assets/plugins/SweetAlert/dist/sweetalert2.min.css">
+
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+
+
+</head>
+
+<body>
+
+
+    <div class="container mt-5">
+
+        <div class="card">
+            <div class="card-header bg-info">
+                <h3 class="text-white">Gestionar productos</h3>
+                
+            </div>
+            <div class="card-body">
+
+                <input type="hidden" name="idProducto" id="idProducto">
+
+                <div class="row ml-1">
+                    <div class="btn-group-sm">
+                        <button class="btn btn-outline-info" onclick="Consultar();"><span class="fa fa-search"></span> Consultar</button>
+                        <button class="btn btn-outline-info" id="guardar" onclick="Guardar();"><span class="fa fa-save"></span> Guardar</button>
+                        <button class="btn btn-outline-info" id="modificar" onclick="Modificar();" disabled="true"><span class="fa fa-pencil-alt"></span> Modificar</button>
+                         <a href="persona.html" class="btn btn-outline-info "> <span class="fas fa-users"></span> Usuarios</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="descripcion">Descripción:</label>
+                        <input type="text" name="descripcion" id="descripcion" placeholder="Descripción de producto" class="form-control" autofocus>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="id_proveedor">Id proveedor:</label>
+                        <input type="number" name="id_proveedor" id="id_proveedor" placeholder="Ingresar id del proveedor" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="id_categoria">Id Categoria:</label>
+                        <input type="number" name="id_categoria" id="id_categoria" placeholder="Ingresar id de la categoría del producto" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="precio">Precio:</label>
+                        <input type="text" name="precio" id="precio" placeholder="Precio del producto" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="stock">Stock:</label>
+                        <input type="text" name="stock" id="stock" placeholder="Cantidad del producto en stock" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="fecha_ingreso">Fecha de ingreso:</label>
+                        <input type="date" name="fecha_ingreso" id="fecha_ingreso" placeholder="Fecha de ingreso del producto" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="card-header bg-info mt-3">
+                <h3 class="text-white">Listado de los producto existentes</h3>
+            </div>
+            <div class="card-footer">
+                <table class="table table-striped" id="tablaProductos">
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Id proveedor</th>
+                            <th>Id Categoría</th>
+                            <th>Precio</th>
+                            <th>stock</th>
+                            <th>Fecha de ingreso</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productos">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<!-- JAVASCRIPT -->
+<script src="../assets/js/all.min.js"></script>
+
+<script src="../assets/js/jquery.js"></script>
+<script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="../js/productos.js"></script>
+<script src="../assets/plugins/SweetAlert/dist/sweetalert2.all.min.js"></script>
+
+
+</html>
